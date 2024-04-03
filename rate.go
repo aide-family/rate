@@ -16,7 +16,7 @@ type Limiter struct {
 	// interval Indicates the rate limit for token generation
 	interval time.Duration
 	// bucket Used to store the number of tokens that have been used during the window time
-	bucket []int64
+	bucket []int64 //TODO: Excessive memory usage
 }
 
 func NewLimiter(limit int64, windowSize, interval time.Duration) *Limiter {
